@@ -1,0 +1,257 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    min-height: 100vh;
+    background: linear-gradient(to right, #f2f2f2 50%, #b30000 50%);
+}
+
+.hero{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: clamp(10px, 3vw, 30px);
+}
+
+.card::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, 
+                 #f2f2f2 55%, 
+                 rgba(242, 242, 242, 0.6)60%,
+                 rgba(179, 0, 0, 0.9)70%, 
+                 #b30000 100%);
+    z-index: -1;
+}
+
+.card{
+    position: relative;
+    width: min(1650px, 600%);
+    min-height: 80vh;
+    border-radius: 15px;
+    padding: clamp(30px, 5vw, 70px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden;
+    transform: scale(clamp(0.8, 1vw + 0.75, 1));
+    transform-origin: center;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.18),
+                inset 0 1px 0 rgba(255, 255, 255, 0.25);
+}
+
+.navbar{
+    position: absolute;
+    top: 30px;
+    left: clamp(20px, 5vw, 60px);
+    right: clamp(20px, 5vw, 60px);
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    z-index: 100;
+}
+
+.nav-logo{
+    width: 40px;
+}
+
+.nav-links{
+    display: flex;
+    gap: clamp(20px, 3vw, 40px);
+    list-style: none;
+}
+
+.nav-links li{
+    position: relative;
+    font-size: 16px;
+    color: #666;
+    cursor: pointer;
+}
+
+.nav-links li::after{
+    content: "";
+    position: absolute;
+    bottom: -6px;
+    left: 0px;
+    width: 0;
+    height: 2px;
+    background: #e50914;
+}
+
+.nav-links li:hover{
+    color: #000;
+}
+
+.nav-links li:hover::after{
+    width: 100%;
+}
+
+.left-panel{
+    max-width: 520px;
+    margin-top: clamp(60px, 8vh, 100px);
+}
+
+.tag{
+    font-size: 12px;
+    letter-spacing: 3px;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+h1{
+    font-size: clamp(32px, 5vw, 62px);
+    line-height: 1.05;
+    font-weight: 800;
+}
+
+h1 span{
+    color: #e50914;
+}
+
+.btn{
+    margin-top: 30px;
+    padding: 12px 25px;
+    border-radius: 30px;
+    border: 1px solid grey;
+    background: #fff;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btn:hover{
+    background: black;
+    color: #fff;
+    transform: translateY(-3px) scale(1.05);
+}
+
+.main-img{
+    position: absolute;
+    right: clamp(22%, 27%, 33%);
+    bottom: 0;
+    height: 120%;
+    display: flex;
+    align-items: flex-end;
+    z-index: 1;
+}
+
+.deadpool-img{
+    width: clamp(500px, 46vw, 700px);
+    height: auto;
+    max-height: 100%;
+    pointer-events: none;
+    animation: zoom 4s ease-in-out infinite alternate;
+    transform-origin: bottom center;
+}
+
+@keyframes zoom {
+    0% {
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(1.04);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.right-panel{
+    position: absolute;
+    top: 125px;
+    right: 0;
+    width: 35%;
+    height: 50%;
+    padding: 30px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 90px;
+    color: white;
+}
+
+.top-card{
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2),
+                0 10px 30px rgba(0, 0, 0, 0.2);
+    color: white;
+}
+
+.content-row,
+.stats-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.text{
+    flex: 1;
+    max-width: 60;
+}
+
+.text h4 {
+    font-size: 16px;
+    line-height: 1.4;
+}
+
+.studio{
+    font-size: 11px;
+    opacity: 0.7;
+    margin-bottom: 5px;
+}
+
+.thumb-right-img, 
+.thumb-left-img {
+    width: clamp(100px, 9vw, 160px);
+    height: clamp(100px, 9vw, 160px);
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.stats-row{
+    gap: 30px;
+}
+
+.stats{
+    flex: 1;
+}
+
+.stats h2{
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.views{
+    font-size: 10px;
+    letter-spacing: 2px;
+    opacity: 0.6;
+    margin-top: 4px;
+}
+
+.ration{
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 4px;
+}
+
+.stars{
+    font-size: 13.5px;
+    color: yellow;
+}
+
+.more{
+    margin-top: 4px;
+    font-size: 11px;
+}
